@@ -1,0 +1,71 @@
+<%= simple_form_for(article) do |f| %>
+  <%= f.text_area :title %>
+  <div class=" container form-floating">
+  <%= f.text_area :subtitle1, class: 'form-control' %>
+  </div>
+  <div class="btn btn-primary">
+  <%= f.button :submit %>
+  </div>
+<% end %>
+<%= form_with(model: article) do |form| %>
+  <% if article.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% article.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_area :title %>
+  </div>
+
+  <div>
+    <%= form.label :subtitle1, style: "display: block" %>
+    <%= form.text_area :subtitle1 %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_area :image %>
+  </div>
+
+  <div>
+    <%= form.label :paragraph1, style: "display: block" %>
+    <%= form.text_area :paragraph1 %>
+  </div>
+
+  <div>
+    <%= form.label :subtitle2, style: "display: block" %>
+    <%= form.text_area :subtitle2 %>
+  </div>
+
+  <div>
+    <%= form.label :paragraph2, style: "display: block" %>
+    <%= form.text_area :paragraph2 %>
+  </div>
+
+  <div>
+    <%= form.label :subtitle3, style: "display: block" %>
+    <%= form.text_area :subtitle3 %>
+  </div>
+
+  <div>
+    <%= form.label :paragraph3, style: "display: block" %>
+    <%= form.text_area :paragraph3 %>
+  </div>
+
+  <div>
+    <%= form.label :conclusion, style: "display: block" %>
+    <%= form.text_area :conclusion %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
